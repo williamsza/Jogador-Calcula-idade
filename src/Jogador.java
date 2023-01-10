@@ -1,12 +1,14 @@
+import java.time.LocalDate;
+
 public class Jogador {
     String nome;
     String nascionalidade;
     String posicao;
-    int dataDeNascimento;
+    LocalDate dataDeNascimento;
     double altura;
     double peso;
 
-    Jogador(String nome, String nascionalidade, String posicao, int dataDeNascimento, double altura, double peso) {
+    Jogador(String nome, String nascionalidade, String posicao, LocalDate dataDeNascimento, double altura, double peso) {
         this.nome = nome;
         this.nascionalidade = nascionalidade;
         this.posicao = posicao;
@@ -53,11 +55,11 @@ public class Jogador {
         this.posicao = posicao;
     }
 
-    public int getDataDeNascimento() {
+    public LocalDate getDataDeNascimento() {
         return dataDeNascimento;
     }
 
-    public void setDataDeNascimento(int dataDeNascimento) {
+    public void setDataDeNascimento(LocalDate dataDeNascimento) {
         this.dataDeNascimento = dataDeNascimento;
     }
 
