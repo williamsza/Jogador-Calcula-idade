@@ -8,32 +8,30 @@ public class Jogador {
     private LocalDate anoNascimento;
     private double peso;
 
-    Jogador(String nome, String nascionalidade, String posicao, double altura,
-            double peso, LocalDate localDate) {
+    public Jogador(String nome, String nascionalidade, String posicao, double altura,
+            int i, double peso) {
         this.nome = nome;
         this.nascionalidade = nascionalidade;
         this.posicao = posicao;
-        this.anoNascimento = localDate;
+        this.anoNascimento = anoNascimento;
         this.altura = altura;
         this.peso = peso;
     }
 
-    
-
-    public Long calcularIdade() {
+    public int calcularIdade() {
         LocalDate hoje = LocalDate.now();
-
-        return (long) (hoje.getYear() - this.anoNascimento.getYear());
+        return (int) hoje.getYear() - this.anoNascimento.getYear();
 
     }
 
-    public void imprimirDadosJogador() {
+    public boolean imprimirDadosJogador() {
         System.out.println("Nome do jogdor: " + this.getNome());
-        System.out.println("Nascionalidade do jogador" + this.getNascionalidade());
+        System.out.println("Nascionalidade do jogador " + this.getNascionalidade());
         System.out.println("Posição do Jogador: " + this.getPosicao());
-        System.out.println("Data de nascimento do jogador" + anoNascimento);
-        System.out.println("Altura do Jogador" + this.getAltura());
-        System.out.println("Peso do Jogador" + this.getPeso());
+        System.out.println("Data de nascimento do jogador " + this.getAnoNascimento());
+        System.out.println("Altura do Jogador " + this.getAltura());
+        System.out.println("Peso do Jogador " + this.getPeso());
+        return false;
 
     }
 
@@ -67,6 +65,14 @@ public class Jogador {
 
     public void setAltura(double altura) {
         this.altura = altura;
+    }
+
+    public LocalDate getAnoNascimento() {
+        return anoNascimento;
+    }
+
+    public void setAnoNascimento(LocalDate anoNascimento) {
+        this.anoNascimento = anoNascimento;
     }
 
     public double getPeso() {
