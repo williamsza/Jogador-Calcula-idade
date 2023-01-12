@@ -1,22 +1,30 @@
-import java.util.Date;
+import java.time.LocalDate;
 
 public class Jogador {
     private String nome;
     private String nascionalidade;
     private String posicao;
-    private Date anoNascimento;
     private double altura;
+    private LocalDate anoNascimento;
     private double peso;
-    private Long calculaIdade;
 
-    Jogador(String nome, String nascionalidade, String posicao, Date anoNascimento, double altura,
-            double peso) {
+    Jogador(String nome, String nascionalidade, String posicao, double altura,
+            double peso, LocalDate localDate) {
         this.nome = nome;
         this.nascionalidade = nascionalidade;
         this.posicao = posicao;
-        this.anoNascimento = anoNascimento;
+        this.anoNascimento = localDate;
         this.altura = altura;
         this.peso = peso;
+    }
+
+    
+
+    public Long calcularIdade() {
+        LocalDate hoje = LocalDate.now();
+
+        return (long) (hoje.getYear() - this.anoNascimento.getYear());
+
     }
 
     public void imprimirDadosJogador() {
@@ -24,16 +32,8 @@ public class Jogador {
         System.out.println("Nascionalidade do jogador" + this.getNascionalidade());
         System.out.println("Posição do Jogador: " + this.getPosicao());
         System.out.println("Data de nascimento do jogador" + anoNascimento);
-
         System.out.println("Altura do Jogador" + this.getAltura());
         System.out.println("Peso do Jogador" + this.getPeso());
-
-    }
-
-    Date hoje = new Date();
-
-    public Long calcularIdade() {
-        return this.hoje.getTime() - this.anoNascimento.getTime();
 
     }
 
@@ -59,10 +59,6 @@ public class Jogador {
 
     public void setPosicao(String posicao) {
         this.posicao = posicao;
-    }
-
-    public void setAnoNascimento(Date anoNascimento) {
-        this.anoNascimento = anoNascimento;
     }
 
     public double getAltura() {
