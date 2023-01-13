@@ -10,7 +10,7 @@ public class TestaMetodo {
 
 		System.out.println(pessoa.calcularIdade());
 
-		//pessoa.imprimirDados();
+		pessoa.imprimirDados();
 		pessoa.calcularIdade();
 
 	}
