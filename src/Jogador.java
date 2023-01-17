@@ -13,7 +13,15 @@ public class Jogador {
     private int posicao;
 
     public Jogador(
-            String nome, String nascionalidade, int posicao, double altura, LocalDate nascimento, double peso) {
+            String nome, 
+            String nascionalidade, 
+            double altura, 
+            LocalDate nascimento, 
+            double peso, 
+            LocalDate defesa,
+            LocalDate meioCampo, 
+            LocalDate atacante, 
+            int posicao) {
         this.nome = nome;
         this.nascionalidade = nascionalidade;
         this.altura = altura;
@@ -23,6 +31,7 @@ public class Jogador {
         this.meioCampo = meioCampo;
         this.atacante = atacante;
         this.posicao = posicao;
+
     }
 
     public int calcularIdade() {
@@ -36,26 +45,26 @@ public class Jogador {
             LocalDate agora = LocalDate.now();
             LocalDate posicao = LocalDate.now();
             posicao = defesa.withYear(40);
-            return (int) agora.getYear() - nascimento.getYear() - posicao.getYear();
+            return (int) agora.getYear() - nascimento.getYear() - defesa.getYear();
 
         } else if (posicao == meioCampo.getYear()) {
             LocalDate agora = LocalDate.now();
             LocalDate posicao = LocalDate.now();
             posicao = meioCampo.withYear(38);
-            return (int) agora.getYear() - nascimento.getYear() - posicao.getYear();
+            return (int) agora.getYear() - nascimento.getYear() - meioCampo.getYear();
 
         } else if (posicao == atacante.getYear()) {
             LocalDate agora = LocalDate.now();
             LocalDate posicao = LocalDate.now();
             posicao = atacante.withYear(35);
-            return (int) agora.getYear() - nascimento.getYear() - posicao.getYear();
+            return (int) agora.getYear() - nascimento.getYear() - atacante.getYear();
 
         } else {
 
             System.out.println("Informação indisponivel");
 
         }
-        return calcularAposentadoria();
+        return posicao;
 
     }
 
@@ -63,13 +72,12 @@ public class Jogador {
         System.out.println("Nome do jogdor: " + this.getNome());
         System.out.println("Nascionalidade do jogador: " + this.getNascionalidade());
         System.out.println("Idade:" + this.calcularIdade());
+        System.out.println("Aposentadoria:" + this.calcularAposentadoria());
         System.out.println("Posição do Jogador: " + this.getPosicao());
         System.out.println("Data de nascimento do jogador: " + this.getNascionalidade());
         System.out.println("Altura do Jogador: " + this.getAltura());
         System.out.println("Peso do Jogador: " + this.getPeso());
-        System.out.println("Defesa: " + this.getDefesa());
-        System.out.println("Meio campo: " + this.getMeioCampo());
-        System.out.println("Atacante: " + this.getAtacante());
+        System.out.println("Posição: " + this.getPosicao());
 
     }
 
