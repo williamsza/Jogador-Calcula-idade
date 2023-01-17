@@ -32,9 +32,6 @@ public class Jogador {
 
     public int calcularAposentadoria() {
 
-        // LocalDate defesa;
-        // LocalDate meioCampo;
-        // LocalDate atacante;
         if (posicao == defesa.getYear()) {
             LocalDate agora = LocalDate.now();
             LocalDate posicao = LocalDate.now();
@@ -148,4 +145,6 @@ public class Jogador {
         this.posicao = posicao;
     }
 
+    public void setCalculaAposentdoria() {
+    }
 }

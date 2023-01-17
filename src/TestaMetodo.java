@@ -17,33 +17,31 @@ public class TestaMetodo {
 		pele.setNascimento(LocalDate.of(2000, 02, 10));
 		pele.setAltura(1.73);
 		pele.setPeso(90);
+		pele.setCalculaAposentdoria();
 
 		romario.setNome("Romario");
 		romario.setNascionalidade("Brasileira");
 		romario.setAltura(1.73);
 		romario.setPosicao(0);
-		romario.setNascimento(LocalDate.of(2001, 02, 11));
+		romario.setNascimento(LocalDate.of(2001, 03, 11));
 		romario.setAltura(1.73);
 		romario.setPeso(90);
+		romario.setCalculaAposentdoria();
 
 		ronaldo.setNome("Ronaldo");
 		ronaldo.setNascionalidade("Brasileira");
 		ronaldo.setAltura(1.65);
 		ronaldo.setPosicao(0);
-		ronaldo.setNascimento(LocalDate.of(2010, 02, 10));
+		ronaldo.setNascimento(LocalDate.of(2010, 04, 10));
 		ronaldo.setAltura(1.65);
 		ronaldo.setPeso(91);
-
-		
-		
+		ronaldo.setCalculaAposentdoria();
 
 		System.out.println(pele.calcularIdade());
 		System.out.println(romario.calcularIdade());
 		System.out.println(ronaldo.calcularIdade());
 
-		System.out.println(pele.calcularAposentadoria());
-		System.out.println(romario.calcularAposentadoria());
-		System.out.println(ronaldo.calcularAposentadoria());
+
 
 	}
 
