@@ -4,27 +4,25 @@ import java.time.LocalDate;
 public class Jogador {
     private String nome;
     private String nascionalidade;
-    private String posicao;
     private double altura;
     private LocalDate nascimento;
     private double peso;
     private LocalDate defesa;
     private LocalDate meioCampo;
     private LocalDate atacante;
+    private int posicao;
 
     public Jogador(
-            String nome,
-            String nascionalidade, String posicao, double altura,
-            LocalDate nascimento, double peso, LocalDate defesa, LocalDate meioCampo, LocalDate atacante) {
+            String nome, String nascionalidade, int posicao, double altura, LocalDate nascimento, double peso) {
         this.nome = nome;
         this.nascionalidade = nascionalidade;
-        this.posicao = posicao;
         this.altura = altura;
         this.nascimento = nascimento;
         this.peso = peso;
         this.defesa = defesa;
         this.meioCampo = meioCampo;
         this.atacante = atacante;
+        this.posicao = posicao;
     }
 
     public int calcularIdade() {
@@ -32,31 +30,35 @@ public class Jogador {
         return (int) agora.getYear() - nascimento.getYear();
     }
 
-    public int calcularAposentadoria(LocalDate agora, LocalDate posicaoDefesa, LocalDate posicaoMeioCampo,
-            LocalDate posicaoAtacante,
-            String string, LocalDate localDate) {
+    public int calcularAposentadoria() {
 
-        // LocalDate posicaoMeioCampo = LocalDate.now();
-        // LocalDate posicaoAtacante= LocalDate.now();
-        // LocalDate posicaoDefesa = LocalDate.now();
+        // LocalDate defesa;
+        // LocalDate meioCampo;
+        // LocalDate atacante;
+        if (posicao == defesa.getYear()) {
+            LocalDate agora = LocalDate.now();
+            LocalDate posicao = LocalDate.now();
+            posicao = defesa.withYear(40);
+            return (int) agora.getYear() - nascimento.getYear() - posicao.getYear();
 
-        if (posicaoDefesa.getYear() == posicaoDefesa.getYear()) {
-            posicaoDefesa.withYear(40);
-            return (int) agora.getYear() - nascimento.getYear() - defesa.getYear();
+        } else if (posicao == meioCampo.getYear()) {
+            LocalDate agora = LocalDate.now();
+            LocalDate posicao = LocalDate.now();
+            posicao = meioCampo.withYear(38);
+            return (int) agora.getYear() - nascimento.getYear() - posicao.getYear();
 
-        } else if (posicaoMeioCampo.getYear() == meioCampo.getYear()) {
-            posicaoMeioCampo.withYear(38);
-            return (int) agora.getYear() - nascimento.getYear() - meioCampo.getYear();
-
-        } else if (posicaoAtacante.getYear() == atacante.getYear()) {
-            posicaoMeioCampo.withYear(35);
-            return (int) agora.getYear() - nascimento.getYear() - atacante.getYear();
+        } else if (posicao == atacante.getYear()) {
+            LocalDate agora = LocalDate.now();
+            LocalDate posicao = LocalDate.now();
+            posicao = atacante.withYear(35);
+            return (int) agora.getYear() - nascimento.getYear() - posicao.getYear();
 
         } else {
 
+            System.out.println("Informação indisponivel");
+
         }
-        System.out.println("Informação indisponivel");
-        return 0;
+        return calcularAposentadoria();
 
     }
 
@@ -83,19 +85,11 @@ public class Jogador {
     }
 
     public String getNascionalidade() {
-        return this.nascionalidade;
+        return nascionalidade;
     }
 
     public void setNascionalidade(String nascionalidade) {
         this.nascionalidade = nascionalidade;
-    }
-
-    public String getPosicao() {
-        return posicao;
-    }
-
-    public void setPosicao(String posicao) {
-        this.posicao = posicao;
     }
 
     public double getAltura() {
@@ -108,10 +102,10 @@ public class Jogador {
 
     public LocalDate getNascimento() {
         return nascimento;
-
     }
 
-    public void setNascimento(LocalDate of) {
+    public void setNascimento(LocalDate nascimento) {
+        this.nascimento = nascimento;
     }
 
     public double getPeso() {
@@ -126,16 +120,16 @@ public class Jogador {
         return defesa;
     }
 
-    public void setDefesa(LocalDate volante) {
-        this.defesa = volante;
+    public void setDefesa(LocalDate defesa) {
+        this.defesa = defesa;
     }
 
     public LocalDate getMeioCampo() {
         return meioCampo;
     }
 
-    public void setMeioCampo(LocalDate sentravante) {
-        this.meioCampo = sentravante;
+    public void setMeioCampo(LocalDate meioCampo) {
+        this.meioCampo = meioCampo;
     }
 
     public LocalDate getAtacante() {
@@ -144,6 +138,14 @@ public class Jogador {
 
     public void setAtacante(LocalDate atacante) {
         this.atacante = atacante;
+    }
+
+    public int getPosicao() {
+        return posicao;
+    }
+
+    public void setPosicao(int posicao) {
+        this.posicao = posicao;
     }
 
 }
