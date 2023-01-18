@@ -8,8 +8,7 @@ public class Jogador {
     private double altura;
     private LocalDate nascimento;
     private double peso;
-    private  String posicao;
-   
+    private String posicao;
 
     public Jogador(
             String nome,
@@ -17,8 +16,7 @@ public class Jogador {
             double altura,
             LocalDate nascimento,
             double peso,
-            String posicao
-) {
+            String posicao) {
         this.nome = nome;
         this.nascionalidade = nascionalidade;
         this.altura = altura;
@@ -33,11 +31,12 @@ public class Jogador {
         System.out.println("Nascionalidade do jogador: " + this.getNascionalidade());
         System.out.println("Idade:" + this.calcularIdade());
         System.out.println("Aposentadoria:" + this.calcularAposentadoria());
-        System.out.println("Posição do Jogador: " + this.getPeso());
+        System.out.println("Peso do Jogador: " + this.getPeso());
+        System.out.println("Posição do Jogador: " + this.getPosicao());
         System.out.println("Data de nascimento do jogador: " + this.getNascionalidade());
         System.out.println("Altura do Jogador: " + this.getAltura());
         System.out.println("Peso do Jogador: " + this.getPeso());
-        System.out.println("Posição: " + this.getPeso());
+        System.out.println("Posição: " + this.getPosicao());
 
     }
 
@@ -64,8 +63,6 @@ public class Jogador {
 
     }
 
-    
-
     public String getNome() {
         return nome;
     }
@@ -73,6 +70,7 @@ public class Jogador {
     public void setNome(String nome) {
         this.nome = nome;
     }
+    
 
     public String getNascionalidade() {
         return nascionalidade;
@@ -106,8 +104,14 @@ public class Jogador {
         this.peso = peso;
     }
 
-    public LocalDate getDefesa(LocalDate defesa) {
-        return defesa;
+    public String getPosicao() {
+        return posicao;
     }
+
+    public void setPosicao(String posicao) {
+        this.posicao = posicao;
+    }
+
+    
 
 }
