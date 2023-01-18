@@ -30,13 +30,12 @@ public class Jogador {
         System.out.println("Nome do jogdor: " + this.getNome());
         System.out.println("Nascionalidade do jogador: " + this.getNascionalidade());
         System.out.println("Idade:" + this.calcularIdade());
-        System.out.println("Aposentadoria:" + this.calcularAposentadoria());
+        System.out.println("Tempo para aposentar: " + this.calcularAposentadoria());
         System.out.println("Peso do Jogador: " + this.getPeso());
-        System.out.println("Posição do Jogador: " + this.getPosicao());
-        System.out.println("Data de nascimento do jogador: " + this.getNascionalidade());
+        System.out.println("Data de nascimento do jogador: " + this.getNascimento());
         System.out.println("Altura do Jogador: " + this.getAltura());
-        System.out.println("Peso do Jogador: " + this.getPeso());
-        System.out.println("Posição: " + this.getPosicao());
+       
+        System.out.println("Posição do Jogador: " + this.getPosicao());
 
     }
 
